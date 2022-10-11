@@ -3,6 +3,44 @@
     public static class MembershipFunctions
     {
         /// <summary>
+        /// This function computes fuzzy membership values using a spline-based S-shaped membership function.
+        /// </summary>
+        public static double Smf(double x, double a, double b)
+        {
+            if (x <= a)
+                return 0;
+
+            var m = (a + b) / 2;
+
+            if (a <= x && x <= m)
+                return 2 * Math.Pow((x - a) / (b - a), 2);
+
+            if (m <= x && x <= b)
+                return 1 - (2 * Math.Pow((x - a) / (b - a), 2));
+
+            return 1;
+        }
+
+        /// <summary>
+        /// This function computes fuzzy membership values using a spline-based Z-shaped membership function.
+        /// </summary>
+        public static double Zmf(double x, double a, double b)
+        {
+            if (x <= a)
+                return 1;
+
+            var m = (a + b) / 2;
+
+            if (a <= x && x <= m)
+                return 1 - (2 * Math.Pow((x - a) / (b - a), 2));
+
+            if (m <= x && x <= b)
+                return 2 * Math.Pow((x - a) / (b - a), 2);
+
+            return 0;
+        }
+
+        /// <summary>
         /// This function computes fuzzy membership values using a sigmoidal membership function.
         /// </summary>
         public static double Sigmf(double x, double a, double c)
