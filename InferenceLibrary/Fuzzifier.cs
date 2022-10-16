@@ -15,10 +15,13 @@
 
                 foreach (var term in Model.InputLVs[i].Terms)
                 {
+                    var index = Model.InputLVs[i].X
+                        .Select((x, i) => (x, i))
+                        .OrderBy(t => Math.Abs(t.x - crispValues[i]))
+                        .First().i;
+
                     //nearest result of term membership function
-                    var value = Model.InputLVs[i].Values[term.Key]
-                        .OrderBy(x => Math.Abs(x - crispValues[i]))
-                        .First();
+                    var value = Model.InputLVs[i].Values[term.Key][index];
 
                     if (value > 0)
                         results[i].Add(term.Key, value);
