@@ -56,7 +56,7 @@ namespace InferenceLibrary
             var fuzzyValues = Fuzzifier.Fuzzification(crispInput);
 
             var fuzzyTuples = GenerateFuzzyTuples(fuzzyValues);
-            var rules = fuzzyTuples.Select(t => (t, Model.ActivateRule(t)));
+            var rules = fuzzyTuples.Select(t => (t, Model.RuleProcessor.ActivateRule(t)));
 
             var fuzzySets = Implication(rules);
             var fuzzySet = Aggregation(fuzzySets);

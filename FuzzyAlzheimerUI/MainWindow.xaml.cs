@@ -14,7 +14,7 @@ namespace FuzzyAlzheimerUI
     {
         public MainWindow()
         {
-            Model.Initialize();
+            ModelCacheManager.InitializeModel();
             InitializeComponent();
         }
 

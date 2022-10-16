@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InferenceLibrary", "Inferen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuzzyAlzheimerUI", "FuzzyAlzheimerUI\FuzzyAlzheimerUI.csproj", "{EB7C7DA1-9FB8-4AAF-A9BB-AEE1EE41C9FD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelCache", "ModelCache\ModelCache.csproj", "{DE456601-C33D-43E1-9228-02FC688D2F4C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{EB7C7DA1-9FB8-4AAF-A9BB-AEE1EE41C9FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB7C7DA1-9FB8-4AAF-A9BB-AEE1EE41C9FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB7C7DA1-9FB8-4AAF-A9BB-AEE1EE41C9FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE456601-C33D-43E1-9228-02FC688D2F4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE456601-C33D-43E1-9228-02FC688D2F4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE456601-C33D-43E1-9228-02FC688D2F4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE456601-C33D-43E1-9228-02FC688D2F4C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
