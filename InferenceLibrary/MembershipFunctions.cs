@@ -7,14 +7,13 @@
         /// </summary>
         public static double Trapmf(double x, double a, double b, double c, double d)
         {
-            if (a == b)
-                return 1;
+            var arg1 = (a == b) 
+                ? (x - a) 
+                : (x - a) / (b - a);
 
-            if (c == d)
-                return 0;
-
-            var arg1 = (x - a) / (b - a);
-            var arg2 = (d - x) / (d - c);
+            var arg2 = (c == d)
+                ? (d - x)
+                : (d - x) / (d - c);
 
             var min = Math.Min(1d, Math.Min(arg1, arg2));
             var max = Math.Max(0d, min);
