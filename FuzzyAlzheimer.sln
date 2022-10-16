@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InferenceLibrary", "InferenceLibrary\InferenceLibrary.csproj", "{A044803E-6E6F-40C2-B39B-CC86E86B8B38}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuzzyAlzheimerUI", "FuzzyAlzheimerUI\FuzzyAlzheimerUI.csproj", "{EB7C7DA1-9FB8-4AAF-A9BB-AEE1EE41C9FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{A044803E-6E6F-40C2-B39B-CC86E86B8B38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A044803E-6E6F-40C2-B39B-CC86E86B8B38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A044803E-6E6F-40C2-B39B-CC86E86B8B38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB7C7DA1-9FB8-4AAF-A9BB-AEE1EE41C9FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB7C7DA1-9FB8-4AAF-A9BB-AEE1EE41C9FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB7C7DA1-9FB8-4AAF-A9BB-AEE1EE41C9FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB7C7DA1-9FB8-4AAF-A9BB-AEE1EE41C9FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

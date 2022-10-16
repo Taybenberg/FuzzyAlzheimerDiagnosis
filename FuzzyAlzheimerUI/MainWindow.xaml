@@ -1,0 +1,33 @@
+﻿<ui:UiWindow
+    x:Class="FuzzyAlzheimerUI.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    xmlns:local="clr-namespace:FuzzyAlzheimerUI"
+    mc:Ignorable="d"
+    ExtendsContentIntoTitleBar="True"
+    WindowBackdropType="Mica"
+    Height="450" Width="800"
+    Title="Fuzzy Alzheimer Disease Diagnosis">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <ui:TitleBar
+            Title="Fuzzy Alzheimer Disease Diagnosis"
+            Grid.Row="0"
+            Icon="pack://application:,,,/Assets/applicationIcon-256.png">
+        </ui:TitleBar>
+
+        <Grid Grid.Row="1">
+            <ui:Button
+                Content="Hello World"
+                Icon="Fluent24"/>
+        </Grid>
+    </Grid>
+</ui:UiWindow>
