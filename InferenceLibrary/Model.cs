@@ -9,27 +9,29 @@ namespace InferenceLibrary
         /// </summary>
         public static void Initialize()
         {
-            OutputLV.Values = new();
+            OutputLV.XValues = OutputLV.X.Range;
+            OutputLV.TermValues = new();
             foreach (var term in OutputLV.Terms)
             {
                 //Calculate membership function value for each x 
-                var termValues = OutputLV.X
+                var termValues = OutputLV.XValues
                     .Select(x => term.Value.Invoke(x))
                     .ToArray();
 
-                OutputLV.Values.Add(term.Key, termValues);
+                OutputLV.TermValues.Add(term.Key, termValues);
             }
 
             foreach (var inputLV in InputLVs)
             {
-                inputLV.Values = new();
+                inputLV.XValues = inputLV.X.Range;
+                inputLV.TermValues = new();
                 foreach (var term in inputLV.Terms)
                 {
-                    var termValues = inputLV.X
+                    var termValues = inputLV.XValues
                         .Select(x => term.Value.Invoke(x))
                         .ToArray();
 
-                    inputLV.Values.Add(term.Key, termValues);
+                    inputLV.TermValues.Add(term.Key, termValues);
                 }
             }
         }
@@ -41,9 +43,7 @@ namespace InferenceLibrary
         {
             new LinguisticVariable
             {
-                //C# generates only int range
-                //Generate int from 0 to 1000, then scale to double 0-10
-                X = Enumerable.Range(0, (int)(10 / 0.01)).Select(i => i * 0.01).ToArray(), //0-10, step 0.01
+                X = new XRange(0, 10, 0.01), //0-10, step 0.01
                 Name = "Memory Loss",
                 Terms = new()
                 {
@@ -56,7 +56,7 @@ namespace InferenceLibrary
 
             new LinguisticVariable
             {
-                X = Enumerable.Range(0, (int)(10 / 0.01)).Select(i => i * 0.01).ToArray(), //0-10, step 0.01
+                X = new XRange(0, 10, 0.01), //0-10, step 0.01
                 Name = "Cognitive Symptom 1",
                 Terms = new()
                 {
@@ -69,7 +69,7 @@ namespace InferenceLibrary
 
             new LinguisticVariable
             {
-                X = Enumerable.Range(0, (int)(10 / 0.01)).Select(i => i * 0.01).ToArray(), //0-10, step 0.01
+                X = new XRange(0, 10, 0.01), //0-10, step 0.01
                 Name = "Cognitive Symptom 2",
                 Terms = new()
                 {
@@ -86,7 +86,7 @@ namespace InferenceLibrary
         /// </summary>
         public static readonly LinguisticVariable OutputLV = new()
         {
-            X = Enumerable.Range(0, (int)(10 / 0.01)).Select(i => i * 0.01).ToArray(), //0-10, step 0.01
+            X = new XRange(0, 10, 0.01), //0-10, step 0.01
             Name = "ADIN",
             Terms = new()
             {

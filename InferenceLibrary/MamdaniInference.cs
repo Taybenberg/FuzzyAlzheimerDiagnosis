@@ -17,7 +17,7 @@ namespace InferenceLibrary
                 var inputMfsMin = Math.Min(rule.fuzzyTuple.ML.Value, Math.Min(rule.fuzzyTuple.CS1.Value, rule.fuzzyTuple.CS2.Value));
 
                 //Find min among values of output membership function and input min
-                var fuzzyMin = Model.OutputLV.Values[rule.OutputSeverity]
+                var fuzzyMin = Model.OutputLV.TermValues[rule.OutputSeverity]
                     .Select(x => Math.Min(x, inputMfsMin));
 
                 result.Add(fuzzyMin.ToArray());

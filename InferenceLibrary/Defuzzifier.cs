@@ -8,7 +8,7 @@
 
             foreach (var term in Model.OutputLV.Terms)
             {
-                var result = JaccardMeasure(Model.OutputLV.Values[term.Key], fuzzySet);
+                var result = JaccardMeasure(Model.OutputLV.TermValues[term.Key], fuzzySet);
                 words.Add((term.Key, result));
             }
 
@@ -30,7 +30,9 @@
 
         private static double Cog(double[] fuzzyValues)
         {
-            var merged = Model.OutputLV.X.Zip(fuzzyValues, (a, b) => a * b);
+            var merged = Model.OutputLV.XValues
+                .Zip(fuzzyValues, (a, b) => a * b);
+
             return merged.Sum() / fuzzyValues.Sum();
         }
     }
