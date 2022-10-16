@@ -72,15 +72,26 @@
         /// </summary>
         public static double Gauss2mf(double x, double sig1, double c1, double sig2, double c2)
         {
-            var f1 = GaussFunc(x, sig1, c1);
-            var f2 = GaussFunc(x, sig2, c2);
+            if (c1 < c2)
+            {
+                if (x < c1)
+                    return GaussFunc(x, sig1, c1);
 
-            var product = f1 * f2;
+                if (x > c2)
+                    return GaussFunc(x, sig2, c2);
 
-            if (product > 1)
                 return 1;
+            }        
+            else
+            {
+                if (x < c2)
+                    return GaussFunc(x, sig1, c1);
 
-            return product;
+                if (x > c1)
+                    return GaussFunc(x, sig2, c2);
+
+                return GaussFunc(x, sig1, c1) * GaussFunc(x, sig2, c2);
+            }
         }
 
         /// <summary>
@@ -91,7 +102,7 @@
         /// <param name="c">Mean</param>
         private static double GaussFunc(double x, double sig, double c)
         {
-            return Math.Exp(Math.Pow(-(x - c), 2) / (2 * Math.Pow(sig, 2)));
+            return Math.Exp(-Math.Pow((x - c), 2) / (2 * Math.Pow(sig, 2)));
         }
     }
 }

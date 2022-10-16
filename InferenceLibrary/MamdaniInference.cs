@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-
-namespace InferenceLibrary
+﻿namespace InferenceLibrary
 {
     public static class MamdaniInference
     {
