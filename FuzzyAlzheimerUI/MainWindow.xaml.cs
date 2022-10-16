@@ -23,7 +23,7 @@ namespace FuzzyAlzheimerUI
             Theme.Apply(Theme.GetAppTheme() is ThemeType.Dark ? ThemeType.Light : ThemeType.Dark);
         }
 
-        private static readonly Regex _regex = new Regex("[^0-9.-]+"); //regex that matches disallowed text
+        private static readonly Regex _regex = new Regex("[^0-9,-]+"); //regex that matches disallowed text
         private void PreviewTextInputEvent(object sender, System.Windows.Input.TextCompositionEventArgs e)
         {
             e.Handled = _regex.IsMatch(e.Text);
