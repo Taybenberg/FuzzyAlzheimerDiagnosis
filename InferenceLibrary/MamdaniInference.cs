@@ -3,7 +3,7 @@
     public static class MamdaniInference
     {
         /// <summary>
-        /// Mamdani implication (MIN)
+        /// Mamdani implication (MIN).
         /// </summary>
         public static IEnumerable<double[]> Implication(IEnumerable<(FuzzyTuple fuzzyTuple, Severity OutputSeverity)> rules)
         {
@@ -25,7 +25,7 @@
         }
 
         /// <summary>
-        /// Mamdani aggregation (MAX)
+        /// Mamdani aggregation (MAX).
         /// </summary>
         public static double[] Aggregation(IEnumerable<double[]> fuzzySets)
         {
@@ -47,7 +47,7 @@
         }
 
         /// <summary>
-        /// Mamdani processing
+        /// Mamdani processing.
         /// </summary>
         public static (double crispResult, (Severity term, double value) wordResult) Process(double[] crispInput)
         {
@@ -66,7 +66,7 @@
         }
 
         /// <summary>
-        /// Create all possible tuples of Fuzzy values
+        /// Create all possible tuples of Fuzzy values.
         /// </summary>
         private static IEnumerable<FuzzyTuple> GenerateFuzzyTuples(Dictionary<Severity, double>[] fuzzyValues)
         {
