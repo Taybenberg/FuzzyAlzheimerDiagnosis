@@ -22,6 +22,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\InferenceLibrary\InferenceLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Assets\applicationIcon-1024.png" />
     <Resource Include="Assets\applicationIcon-256.png" />
   </ItemGroup>
