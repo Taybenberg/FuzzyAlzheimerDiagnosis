@@ -142,14 +142,14 @@
                             Text="Чітке значення результату"
                             VerticalAlignment="Center"/>
 
-                        <ui:TextBox
+                        <TextBox
                             x:Name="Crisp_Value"
                             Grid.Row="0"
                             Grid.Column="1"
                             Margin="0,5,7,5"
                             VerticalAlignment="Center"
                             PreviewTextInput="PreviewTextInputEvent"
-                            IsEnabled="False"/>
+                            IsReadOnly="True"/>
 
                         <TextBlock
                             Grid.Row="1"
@@ -158,14 +158,14 @@
                             Text="Результат діагностики ризику хвороби Альцгеймера"
                             VerticalAlignment="Center"/>
 
-                        <ui:TextBox
+                        <TextBox
                             x:Name="Word_Value"
                             Grid.Row="1"
                             Grid.Column="1"
                             Margin="0,5,7,5"
                             VerticalAlignment="Center"
                             PreviewTextInput="PreviewTextInputEvent"
-                            IsEnabled="False"/>
+                            IsReadOnly="True"/>
                     </Grid>
                 </Border>
             </Grid>
