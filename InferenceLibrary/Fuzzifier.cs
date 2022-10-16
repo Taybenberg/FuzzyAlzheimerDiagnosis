@@ -1,4 +1,4 @@
-﻿namespace FuzzyAlzheimer
+﻿namespace InferenceLibrary
 {
     public static class Fuzzifier
     {

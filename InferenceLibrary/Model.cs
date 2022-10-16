@@ -1,9 +1,39 @@
-﻿using static FuzzyAlzheimer.Severity;
+﻿using static InferenceLibrary.Severity;
 
-namespace FuzzyAlzheimer
+namespace InferenceLibrary
 {
     public static class Model
     {
+        /// <summary>
+        /// Initialize model values by calculating Lingustic Terms. 
+        /// </summary>
+        public static void Initialize()
+        {
+            OutputLV.Values = new();
+            foreach (var term in OutputLV.Terms)
+            {
+                //Calculate membership function value for each x 
+                var termValues = OutputLV.X
+                    .Select(x => term.Value.Invoke(x))
+                    .ToArray();
+
+                OutputLV.Values.Add(term.Key, termValues);
+            }
+
+            foreach (var inputLV in InputLVs)
+            {
+                inputLV.Values = new();
+                foreach (var term in inputLV.Terms)
+                {
+                    var termValues = inputLV.X
+                        .Select(x => term.Value.Invoke(x))
+                        .ToArray();
+
+                    inputLV.Values.Add(term.Key, termValues);
+                }
+            }
+        }
+
         /// <summary>
         /// Input Linguistic variables.
         /// </summary>
