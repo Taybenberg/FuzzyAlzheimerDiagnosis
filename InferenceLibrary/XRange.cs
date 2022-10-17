@@ -16,7 +16,7 @@
         /// X axis range.
         /// </summary>
         public double[] Range => Enumerable
-            .Range(_from, (int)(_to / _step))  //C# generates only int range
+            .Range(_from, (int)(_to / _step) + 1)  //C# generates only int range
             .Select(i => i * _step)
             .ToArray();
     }
