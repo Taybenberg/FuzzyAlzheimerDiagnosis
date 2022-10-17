@@ -37,6 +37,11 @@ namespace FuzzyAlzheimerUI
                 var cs1 = double.Parse(CS1_Value.Text);
                 var cs2 = double.Parse(CS2_Value.Text);
 
+                if (ml < 0 || ml > 10
+                || cs1 < 0 || cs1 > 10
+                || cs2 < 0 || cs2 > 10)
+                    throw new ArgumentException();
+
                 var crispInput = new double[]
                 {
                     ml,
