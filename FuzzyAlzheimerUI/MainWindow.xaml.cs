@@ -19,26 +19,27 @@ namespace FuzzyAlzheimerUI
             ModelCacheManager.InitializeModel();
             InitializeComponent();
 
-            CognitiveAbilities.ItemsSource = new List<CognitiveAbility>
+            CognitiveAbilities.ItemsSource = new List<string>
             {
-                new CognitiveAbility("Selective attention", string.Empty),
-                new CognitiveAbility("Sustained attention", string.Empty),
-                new CognitiveAbility("Divided attention", string.Empty),
-                new CognitiveAbility("Information processing speed", string.Empty),
-                new CognitiveAbility("Short-term memory", string.Empty),
-                new CognitiveAbility("Long-term memory", string.Empty),
-                new CognitiveAbility("Verbal expression", string.Empty),
-                new CognitiveAbility("Listening comprehension", string.Empty),
-                new CognitiveAbility("Visual perception ", string.Empty),
-                new CognitiveAbility("Perceptual organization", string.Empty),
-                new CognitiveAbility("visoconstruction", string.Empty),
-                new CognitiveAbility("Planning and graphic sequencing", string.Empty),
-                new CognitiveAbility("Simple tasks of action and inhibition", string.Empty),
-                new CognitiveAbility("Orientation", string.Empty),
-                new CognitiveAbility("Motor, verbal and graphic sequence", string.Empty),
-                new CognitiveAbility("Capacity of abstraction and reasoning", string.Empty),
-                new CognitiveAbility("Instrumental and regular activities of daily living", string.Empty),
-                new CognitiveAbility("Changes in behaviour and Social cognition", string.Empty),
+                "Короткочасна пам'ять",
+                "Довготривала пам'ять",
+                string.Empty,
+                "Вибіркова увага",
+                "Постійна увага",
+                "Поділена увага",
+                "Швидкість обробки інформації",
+                "Словесне вираження",
+                "Розуміння на слух",
+                "Візуальне сприйняття",
+                "Перцептивна організація",
+                "Візоконструкція",
+                "Планування та графічна послідовність",
+                "Прості задачі дії і гальмування",
+                "Орієнтація",
+                "Рухова, словесно-графічна послідовність",
+                "Здатність до абстракції та міркування",
+                "Інструментальна та регулярна діяльність повсякденного життя",
+                "Зміни в поведінці та соціальному пізнанні"
             };
         }
 

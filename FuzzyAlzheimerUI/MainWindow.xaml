@@ -9,7 +9,7 @@
     mc:Ignorable="d"
     ExtendsContentIntoTitleBar="True"
     WindowBackdropType="Mica"
-    Height="600" Width="800"
+    Height="600" Width="900"
     Title="Fuzzy Alzheimer Disease Diagnosis">
 
     <Grid>
@@ -38,8 +38,6 @@
             </ui:TitleBar.Header>
         </ui:TitleBar>
 
-
-
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
@@ -52,12 +50,23 @@
                 CornerRadius="8,8,0,0">
                 <Grid>
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
 
-                    <Grid Grid.Row="0">
+                    <TextBlock
+                        Grid.Row="0"
+                        Margin="5,5,5,25"
+                        TextWrapping="WrapWithOverflow"
+                        Text=" Проведіть нейропсихологічну діагностику пацієнта,&#10;
+яка обов'язково включає тест на втрату пам'яті&#10;
+та як мінімум два інші когнітивні тести.&#10;
+Переведіть результати тестів на шкалу від 0 до 10&#10;
+та відберіть результати з найвищим значенням."/>
+
+                    <Grid Grid.Row="1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="0.5*"/>
                             <ColumnDefinition Width="100"/>
@@ -119,7 +128,7 @@
 
                     <ui:Button
                         x:Name="AcceptButton"
-                        Grid.Row="1"
+                        Grid.Row="2"
                         Appearance="Primary"
                         Icon="ClipboardTask24"
                         HorizontalAlignment="Center"
@@ -127,7 +136,7 @@
                         Click="AcceptButton_Click"/>
 
                     <Border
-                        Grid.Row="2"
+                        Grid.Row="3"
                         Margin="0,5,0,0"
                         Background="{DynamicResource ControlFillColorDefaultBrush}"
                         CornerRadius="8,8,0,0">
@@ -180,22 +189,13 @@
 
             <ListView
                 Grid.Column="1"
-                Margin="5,5,5,5"
+                Margin="5,0,0,0"
                 x:Name="CognitiveAbilities">
                 <ListView.ItemTemplate>
-                    <DataTemplate DataType="{x:Type local:CognitiveAbility}">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <TextBlock 
+                    <DataTemplate>
+                        <TextBlock 
                                 Grid.Column="0"
-                                Text="{Binding Name}"/>
-                            <TextBlock 
-                                Grid.Column="1"
-                                Text="{Binding CognitiveTest}"/>
-                        </Grid>
+                                Text="{Binding}"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
