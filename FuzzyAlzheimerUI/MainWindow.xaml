@@ -155,7 +155,7 @@
                             Grid.Row="1"
                             Grid.Column="0"
                             Margin="15,0,0,0"
-                            Text="Результат діагностики ризику хвороби Альцгеймера"
+                            Text="Результат діагностики хвороби Альцгеймера"
                             VerticalAlignment="Center"/>
 
                         <TextBox
