@@ -11,7 +11,7 @@
 
             foreach (var rule in rules)
             {
-                //Find min among input membership functions
+                //Find min among input membership function results
                 var inputMfsMin = Math.Min(rule.fuzzyTuple.ML.Value, Math.Min(rule.fuzzyTuple.CS1.Value, rule.fuzzyTuple.CS2.Value));
 
                 //Find min among values of output membership function and input min
