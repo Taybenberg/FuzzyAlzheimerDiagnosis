@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InferenceLibrary", "InferenceLibrary\InferenceLibrary.csproj", "{A044803E-6E6F-40C2-B39B-CC86E86B8B38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InferenceLibrary", "InferenceLibrary\InferenceLibrary.csproj", "{A044803E-6E6F-40C2-B39B-CC86E86B8B38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuzzyAlzheimerUI", "FuzzyAlzheimerUI\FuzzyAlzheimerUI.csproj", "{EB7C7DA1-9FB8-4AAF-A9BB-AEE1EE41C9FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FuzzyAlzheimerUI", "FuzzyAlzheimerUI\FuzzyAlzheimerUI.csproj", "{EB7C7DA1-9FB8-4AAF-A9BB-AEE1EE41C9FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelCache", "ModelCache\ModelCache.csproj", "{DE456601-C33D-43E1-9228-02FC688D2F4C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelCache", "ModelCache\ModelCache.csproj", "{DE456601-C33D-43E1-9228-02FC688D2F4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InferenceTests", "InferenceTests\InferenceTests.csproj", "{1A8151BE-58BB-4A4B-AC48-15889E591190}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{DE456601-C33D-43E1-9228-02FC688D2F4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE456601-C33D-43E1-9228-02FC688D2F4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE456601-C33D-43E1-9228-02FC688D2F4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A8151BE-58BB-4A4B-AC48-15889E591190}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A8151BE-58BB-4A4B-AC48-15889E591190}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A8151BE-58BB-4A4B-AC48-15889E591190}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A8151BE-58BB-4A4B-AC48-15889E591190}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
