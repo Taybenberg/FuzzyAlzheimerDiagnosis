@@ -19,4 +19,10 @@
     <ProjectReference Include="..\InferenceLibrary\InferenceLibrary.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Dataset.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
