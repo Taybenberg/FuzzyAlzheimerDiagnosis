@@ -1,0 +1,204 @@
+﻿<ui:UiWindow
+    x:Class="FuzzyAlzheimerUI.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    xmlns:local="clr-namespace:FuzzyAlzheimerUI"
+    mc:Ignorable="d"
+    ExtendsContentIntoTitleBar="True"
+    WindowBackdropType="Mica"
+    Height="600" Width="900"
+    Title="Fuzzy Alzheimer Disease Diagnosis">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <ui:TitleBar
+            Title="Нечітка діагностика хвороби Альцгеймера"
+            Grid.Row="0"
+            Icon="pack://application:,,,/Assets/applicationIcon-256.png">
+            <ui:TitleBar.Header>
+                <StackPanel
+                    Margin="0,0,12,0"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Orientation="Horizontal">
+                    <ui:Button
+                        x:Name="ThemeButton"
+                        Appearance="Secondary"
+                        Content="Тема"
+                        Icon="DarkTheme20"
+                        Click="ThemeButton_Click" />
+                </StackPanel>
+            </ui:TitleBar.Header>
+        </ui:TitleBar>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border
+                Grid.Column="0"
+                Background="{DynamicResource ControlFillColorDefaultBrush}"
+                CornerRadius="8,8,0,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock
+                        Grid.Row="0"
+                        Margin="5,5,5,25"
+                        TextWrapping="WrapWithOverflow"
+                        Text=" Проведіть нейропсихологічну діагностику пацієнта,&#10;
+яка обов'язково включає тест на втрату пам'яті&#10;
+та як мінімум два інші когнітивні тести.&#10;
+Переведіть результати тестів на шкалу від 0 до 10&#10;
+та відберіть результати з найвищим значенням."/>
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*"/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Margin="15,0,0,0"
+                            Text="Результат тесту на втрату пам'яті"
+                            VerticalAlignment="Center"/>
+
+                        <ui:TextBox
+                            x:Name="ML_Value"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Margin="0,5,7,5"
+                            PlaceholderText="0-10"
+                            VerticalAlignment="Center"
+                            PreviewTextInput="PreviewTextInputEvent"/>
+
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Margin="15,0,0,0"
+                            Text="Результат когнітивного тесту 1"
+                            VerticalAlignment="Center"/>
+
+                        <ui:TextBox
+                            x:Name="CS1_Value"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="0,5,7,5"
+                            PlaceholderText="0-10"
+                            VerticalAlignment="Center"
+                            PreviewTextInput="PreviewTextInputEvent"/>
+
+                        <TextBlock
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            Margin="15,0,0,0"
+                            Text="Результат когнітивного тесту 2"
+                            VerticalAlignment="Center"/>
+
+                        <ui:TextBox
+                            x:Name="CS2_Value"
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Margin="0,5,7,5"
+                            PlaceholderText="0-10"
+                            VerticalAlignment="Center"
+                            PreviewTextInput="PreviewTextInputEvent"/>
+                    </Grid>
+
+                    <ui:Button
+                        x:Name="AcceptButton"
+                        Grid.Row="2"
+                        Appearance="Primary"
+                        Icon="ClipboardTask24"
+                        HorizontalAlignment="Center"
+                        Content="Підтвердити"
+                        Click="AcceptButton_Click"/>
+
+                    <Border
+                        Grid.Row="3"
+                        Margin="0,5,0,0"
+                        Background="{DynamicResource ControlFillColorDefaultBrush}"
+                        CornerRadius="8,8,0,0">
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="100"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Margin="15,0,5,0"
+                                Text="Чітке значення результату"
+                                VerticalAlignment="Center"/>
+
+                            <TextBox
+                                x:Name="Crisp_Value"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Margin="5,5,7,5"
+                                VerticalAlignment="Center"
+                                PreviewTextInput="PreviewTextInputEvent"
+                                IsReadOnly="True"/>
+
+                            <TextBlock
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Margin="15,0,5,0"
+                                Text="Результат діагностики хвороби Альцгеймера"
+                                VerticalAlignment="Center"/>
+
+                            <TextBox
+                                x:Name="Word_Value"
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Margin="5,5,7,5"
+                                VerticalAlignment="Center"
+                                PreviewTextInput="PreviewTextInputEvent"
+                                IsReadOnly="True"/>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Border>
+
+            <ListView
+                Grid.Column="1"
+                Margin="5,0,0,0"
+                x:Name="CognitiveAbilities">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock 
+                                Grid.Column="0"
+                                Text="{Binding}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </Grid>
+</ui:UiWindow>

@@ -1,7 +1,10 @@
-﻿namespace FuzzyAlzheimer
+﻿namespace InferenceLibrary
 {
     public static class Fuzzifier
     {
+        /// <summary>
+        /// Transform a crisp set into a fuzzy set.
+        /// </summary>
         public static Dictionary<Severity, double>[] Fuzzification(double[] crispValues)
         {
             if (Model.InputLVs.Length != crispValues.Length)
@@ -15,10 +18,14 @@
 
                 foreach (var term in Model.InputLVs[i].Terms)
                 {
-                    //nearest result of term membership function
-                    var value = Model.InputLVs[i].Values[term.Key]
-                        .OrderBy(x => Math.Abs(x - crispValues[i]))
-                        .First();
+                    //Get index of nearest double value
+                    var index = Model.InputLVs[i].XValues
+                        .Select((x, i) => (x, i))
+                        .OrderBy(t => Math.Abs(t.x - crispValues[i]))
+                        .First().i;
+
+                    //Get value of linguistic term
+                    var value = Model.InputLVs[i].TermValues[term.Key][index];
 
                     if (value > 0)
                         results[i].Add(term.Key, value);

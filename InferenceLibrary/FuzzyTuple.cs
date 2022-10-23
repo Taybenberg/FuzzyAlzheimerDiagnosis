@@ -1,4 +1,4 @@
-﻿namespace FuzzyAlzheimer
+﻿namespace InferenceLibrary
 {
     /// <summary>
     /// Contains pairs of Term name and Membership function value. 
